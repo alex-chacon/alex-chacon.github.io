@@ -23,8 +23,10 @@
         font-weight: bold;
     }
     
-    ul{
-     text-align: left;
+    .centered-list {
+        display: inline-block; /* shrink-wrap the list */
+        text-align: left;      /* keep bullets on the left */
+        margin: 20px auto; 
     }
   
 </style>
@@ -45,7 +47,7 @@
 <p>My EP, <strong>Dinner with a Ghost</strong>, explores grief, love, and healing. 
  Each song tells a story inspired by real experiences and emotions.</p>
 
-<ul>
+<ul class="centered-list">
     <li>Song 1: “Dinner with a Ghost” – about loss and memory</li>
     <li>Song 2: “Garden of Eden” – about being led on by someone</li>
     <li>Song 3: “granddaughter's lullaby” – in rememberance of my grandfather</li>

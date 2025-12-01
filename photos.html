@@ -50,11 +50,27 @@
     color: #444;
     margin-top: 8px;
 }
+    
 </style>
+<script>
+function toggleSidebar() {
+    const bar = document.getElementById("sidebar");
+    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
+}
+</script>
 <body>
 <h1>Photography</h1>
 <p>Here are some of my favorite photos I've taken 🌿</p>
+    
+<div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="music.html">My Music</a>
+    <a href="photos.html">Photography</a>
+</div>
 
+<button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
+    
 <div class="photo-grid">
     <img src="IMG_7270.jpg" alt="White flowers in the sun">
     <img src="IMG_7273.jpg" alt="A bench under a tree in Scripps College, near the Humanities building">

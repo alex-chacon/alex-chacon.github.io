@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+</head>
+<style>
+.photo-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+}
+.polaroid {
+    background: #f7f3e9; /* soft cream */
+    padding: 12px 12px 25px 12px; /* thicker bottom for polaroid look */
+    display: inline-block;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+}
+
+.polaroid:hover {
+    transform: rotate(-1deg) scale(1.02);
+}
+
+.polaroid-caption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #444;
+    margin-top: 8px;
+}
+</style>
+<body>
+<h1>Photography</h1>
+<p>Here are some of my favorite photos I've taken 🌿</p>
+
+<div class="photo-grid">
+    <img src="IMG_7270.jpg" alt="White flowers in the sun">
+    <img src="IMG_7273.jpg" alt="A bench under a tree in Scripps College, near the Humanities building">
+    
+    <!-- Add more photos as you choose them -->
+</div>
+</body>
+</html>

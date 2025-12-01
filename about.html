@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>About Me</title>
+<style>
+    .photo-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photo-row img {
+    width: 250px;
+    border-radius: 12px;
+}
+</style>
 </head>
 <body>
 
@@ -19,9 +32,9 @@
 <p>I am a junior at Claremont McKenna College studying Science Management. 
   Even though I don't study music, I have always loved it since I was a little kid. </p>
 
-<div style="display:flex; justify-content:center; gap:20px;">
-    <img src="IMG_7377.jpg" style="width:250px; border-radius:12px;">
-    <img src="IMG_7383.jpg" style="width:250px; border-radius:12px;">
+<div class="photo-row">
+    <img src="IMG_7377.jpg" alt="Photo 1">
+    <img src="IMG_7383.jpg" alt="Photo 2">
 </div>
 
 <script>

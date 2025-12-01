@@ -9,12 +9,50 @@
         font-family: Verdana, sans-serif;
         text-align: center;      
         padding: 30px;
+        transition: margin-left 0.3s;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        background-color: #2f4f4f;
+        padding-top: 60px;
+        transition: 0.3s;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        background-color: #3b6b6b;
+    }
+
+    .open-btn {
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #2f4f4f;
+        color: white;
+        border: none;
+        border-radius: 6px;
     }
 
     img {
         width: 250px;
         border-radius: 12px;
-        display: block;
+        display: inline-block;
         margin: 20px auto;        
     }
 
@@ -24,41 +62,64 @@
     }
     
     .centered-list {
-        display: inline-block; /* shrink-wrap the list */
-        text-align: left;      /* keep bullets on the left */
+        display: inline-block;
+        text-align: left;
         margin: 20px auto; 
     }
-  
-</style>
- </head>
+ </style>
+</head>
+
 <body>
- Hello, World!
- <h1>Welcome to My Page 🌙</h1>
- <p>Hi! I'm Alex — a singer-songwriter and student at CMC. I recently released an EP, titled
- <strong>Dried Rose Petals</strong>.</p>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="music.html">My Music</a>
+    <a href="photos.html">Photography</a>
+</div>
+
+<button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+<script>
+function toggleSidebar() {
+    const bar = document.getElementById("sidebar");
+    if (bar.style.left === "0px") {
+        bar.style.left = "-250px";
+        document.body.style.marginLeft = "0";
+    } else {
+        bar.style.left = "0px";
+        document.body.style.marginLeft = "250px";
+    }
+}
+</script>
+
+<!-- Your existing content -->
+<h1>Welcome to My Page 🌙</h1>
+<p>Hi! I'm Alex — a singer-songwriter and full-time student at CMC. I recently released an EP,
+<strong>Dried Rose Petals</strong>.</p>
  
-<img src="IMG_7270.jpg" width="250" alt="photograph I took of white flowers in the sun" style=display:inline-block;>
-<img src="IMG_7273.jpg" width="250" alt="photograph I took of a bench under a tree" style=display:inline-block;>
+<img src="IMG_7270.jpg" alt="photograph I took of white flowers in the sun">
+<img src="IMG_7273.jpg" alt="photograph I took of a bench under a tree">
  
 <p>This is the first time I've released music that I wrote, sang, and played on guitar :) 
- It was a very cool learning experience!</p>
+It was a very cool learning experience!</p>
 
 <h2>About My Music</h2>
 <p>My EP, <strong>Dinner with a Ghost</strong>, explores grief, love, and healing. 
- Each song tells a story inspired by real experiences and emotions.</p>
+Each song tells a story inspired by real experiences and emotions.</p>
 
 <ul class="centered-list">
     <li>Song 1: “Dinner with a Ghost” – about loss and memory</li>
     <li>Song 2: “Garden of Eden” – about being led on by someone</li>
-    <li>Song 3: “granddaughter's lullaby” – in rememberance of my grandfather</li>
-    <li>Song 4: "flowers" - a remastered song I wrote back in highschool, about dependency</li>
-    <li>Song 5: "i know" - a song about accepting someone isn't right for you and letting go</li>
+    <li>Song 3: “granddaughter's lullaby” – remembrance of my grandfather</li>
+    <li>Song 4: "flowers" – a remastered song I wrote in high school</li>
+    <li>Song 5: "i know" – about accepting someone isn’t right for you</li>
 </ul>
  
- <p>If you're interested in checking it out,
- <a href="https://www.youtube.com/playlist?list=OLAK5uy_kwBBzWfoEfZZD4PE1lRkg9mJlHD4u2mpc" target="_blank">🎧 Here's the link to listen!!</a>
- </p>
- 
- </body>
+<p>If you're interested in checking it out,
+<a href="https://www.youtube.com/playlist?list=OLAK5uy_kwBBzWfoEfZZD4PE1lRkg9mJlHD4u2mpc" target="_blank">🎧 Here's the link to listen!!</a>
+</p>
 
+</body>
 </html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My Music</title>
+
+<style>
+    body {
+        color: SeaGreen;
+        font-family: Verdana, sans-serif;
+        text-align: center;      
+        padding: 30px;
+        transition: margin-left 0.3s;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        background-color: #2f4f4f;
+        padding-top: 60px;
+        transition: 0.3s;
+    }
+
+    .sidebar a {
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .sidebar a:hover {
+        background-color: #3b6b6b;
+    }
+
+    .open-btn {
+        font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #2f4f4f;
+        color: white;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .photo-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .photo-row img {
+        width: 250px;
+        border-radius: 12px;
+    }
+  .lyrics-container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.lyrics-block {
+    margin-bottom: 15px;
+}
+
+.lyrics-btn {
+    width: 100%;
+    background-color: #2f4f4f;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    text-align: left;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.lyrics-btn:hover {
+    background-color: #3b6b6b;
+}
+
+.lyrics-text {
+    display: none;
+    background-color: #f0f8f0;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="music.html">My Music</a>
+    <a href="photos.html">Photography</a>
+</div>
+
+<button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+<script>
+function toggleSidebar() {
+    const bar = document.getElementById("sidebar");
+    if (bar.style.left === "0px") {
+        bar.style.left = "-250px";
+        document.body.style.marginLeft = "0";
+    } else {
+        bar.style.left = "0px";
+        document.body.style.marginLeft = "250px";
+    }
+  
+}
+  function toggleLyrics(id) {
+    const section = document.getElementById(id);
+    section.style.display = section.style.display === "block" ? "none" : "block";
+}
+</script>
+
+<h1>My Music</h1>
+<p>I’ve been writing music since I was a kid, but this past year I really started releasing songs 
+and developing my sound.</p>
+
+<h2>My EP: <em>Dinner with a Ghost</em></h2>
+<p>This EP explores themes of grief, love, letting go, and memory. Each song comes from 
+something personal I’ve lived through.</p>
+
+<div class="photo-row">
+    <img src="IMG_XXXXX.jpg" alt="Studio or music photo 1">
+    <img src="IMG_XXXXX.jpg" alt="Studio or music photo 2">
+</div>
+
+<p>
+🎧 <a href="https://www.youtube.com/playlist?list=OLAK5uy_kwBBzWfoEfZZD4PE1lRkg9mJlHD4u2mpc" 
+target="_blank">Listen to the full EP here</a>
+</p>
+
+<h3>Tracklist & Meanings</h3>
+<ul style="display:inline-block; text-align:left; margin:20px auto;">
+    <li><strong>Dinner with a Ghost</strong> — about loss and memory</li>
+    <li><strong>Garden of Eden</strong> — about being led on by someone</li>
+    <li><strong>granddaughter's lullaby</strong> — written for my grandfather</li>
+    <li><strong>flowers</strong> — about emotional dependency</li>
+    <li><strong>i know</strong> — about letting go of someone who isn't right for you</li>
+</ul>
+
+  <h3>Lyrics</h3>
+
+<div class="lyrics-container">
+
+    <div class="lyrics-block">
+        <button class="lyrics-btn" onclick="toggleLyrics('ghost')">
+            Dinner with a Ghost ▼
+        </button>
+        <div id="ghost" class="lyrics-text">
+            <p>Put your lyrics here...</p>
+        </div>
+    </div>
+
+    <div class="lyrics-block">
+        <button class="lyrics-btn" onclick="toggleLyrics('eden')">
+            Garden of Eden ▼
+        </button>
+        <div id="eden" class="lyrics-text">
+            <p>Put your lyrics here...</p>
+        </div>
+    </div>
+
+    <div class="lyrics-block">
+        <button class="lyrics-btn" onclick="toggleLyrics('lullaby')">
+            granddaughter's lullaby ▼
+        </button>
+        <div id="lullaby" class="lyrics-text">
+            <p>Put your lyrics here...</p>
+        </div>
+    </div>
+
+    <div class="lyrics-block">
+        <button class="lyrics-btn" onclick="toggleLyrics('flowers')">
+            flowers ▼
+        </button>
+        <div id="flowers" class="lyrics-text">
+            <p>Put your lyrics here...</p>
+        </div>
+    </div>
+
+    <div class="lyrics-block">
+        <button class="lyrics-btn" onclick="toggleLyrics('iknow')">
+            i know ▼
+        </button>
+        <div id="iknow" class="lyrics-text">
+            <p>Put your lyrics here...</p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

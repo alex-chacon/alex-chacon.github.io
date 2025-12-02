@@ -62,33 +62,39 @@ body {
 
 /* SIDEBAR */
 .sidebar {
+    height: 100%;
     width: 250px;
-    background-color: #B9D4C0; /* match your palette */
-    color: #2C2C2C;
     position: fixed;
     top: 0;
     left: -250px;
-    height: 100%;
-    transition: left 0.3s;
-    padding-top: 20px;
-    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+    background-color: #2f4f4f;
+    padding-top: 60px;
+    transition: 0.3s;
 }
 
 .sidebar a {
-    padding: 15px;
-    text-decoration: none;
-    color: white;
     display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
 
+.sidebar a:hover {
+        background-color: #3b6b6b;
+    }
+    
 .open-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1000;
+    font-size: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #2f4f4f;
+        color: white;
+        border: none;
+        border-radius: 6px;
 }
 </style>
 </head>
@@ -121,14 +127,7 @@ body {
 <script>
 function toggleSidebar() {
     const bar = document.getElementById("sidebar");
-
-    if (bar.style.left === "0px") {
-        bar.style.left = "-250px";
-        document.body.style.marginLeft = "0";
-    } else {
-        bar.style.left = "0px";
-        document.body.style.marginLeft = "250px";
-    }
+    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
 }
 </script>
 

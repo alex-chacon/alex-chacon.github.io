@@ -50,7 +50,32 @@
     color: #444;
     margin-top: 8px;
 }
-    
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    background-color: #222;
+    padding-top: 20px;
+    transition: 0.3s; /* THIS makes it slide */
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
 </style>
 <script>
 function toggleSidebar() {
@@ -81,5 +106,11 @@ function toggleSidebar() {
     <img src="IMG_7395.jpg" alt="A photo of the sunset above a Pomona building from the viewpoint of outside Beckett Hall">
     <img src="IMG_7396.jpg" alt="A photo of the moon">
 </div>
+<script>
+function toggleSidebar() {
+    const bar = document.getElementById("sidebar");
+    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
+}
+</script>
 </body>
 </html>

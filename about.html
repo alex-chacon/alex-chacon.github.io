@@ -17,11 +17,12 @@
     border: 3px solid #999;
 }
     body {
-        color: SeaGreen;
-        font-family: Verdana, sans-serif;
-        text-align: center;      
-        padding: 30px;
-        transition: margin-left 0.3s;
+        background-color: #1f1f1f; 
+    color: #E9F5EE;
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    padding: 30px;
+    transition: margin-left 0.3s;
     }
 .special-photo {
     width: 250px;
@@ -29,20 +30,23 @@
     border: 3px solid #999;
 }
     .sidebar {
-    height: 100%;
     width: 250px;
+    background-color: #B9D4C0; 
+    color: #2C2C2C;
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
-    background-color: #222;
+    left: -250px;
+    height: 100%;
+    transition: left 0.3s;
     padding-top: 20px;
-    transition: 0.3s; /* THIS makes it slide */
+    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
 }
 
 .sidebar a {
-    padding: 15px;
+     padding: 15px;
     text-decoration: none;
-    color: white;
+    color: #2C2C2C;
+    font-weight: bold;
     display: block;
 }
 
@@ -50,9 +54,12 @@
     position: fixed;
     top: 20px;
     left: 20px;
-    font-size: 24px;
-    padding: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
+    font-size: 32px;
+    color: #E9F5EE;
+    z-index: 1000;
 }
 </style>
 </head>
@@ -118,7 +125,14 @@ function toggleSidebar() {
 <script>
 function toggleSidebar() {
     const bar = document.getElementById("sidebar");
-    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
+
+    if (bar.style.left === "0px") {
+        bar.style.left = "-250px";
+        document.body.style.marginLeft = "0";
+    } else {
+        bar.style.left = "0px";
+        document.body.style.marginLeft = "250px";
+    }
 }
 </script>
 </body>

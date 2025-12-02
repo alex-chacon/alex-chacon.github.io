@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography</title>
-</head>
+
 <style>
 .photo-grid{
     display: grid;
@@ -23,9 +23,10 @@
 .photo-grid img:hover {
     transform: scale(1.05);
 }
+
 .polaroid {
-    background: #f7f3e9; /* soft cream */
-    padding: 12px 12px 25px 12px; /* thicker bottom for polaroid look */
+    background: #f7f3e9;
+    padding: 12px 12px 25px 12px;
     display: inline-block;
     border-radius: 4px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
@@ -50,15 +51,17 @@
     color: #444;
     margin-top: 8px;
 }
+
+/* SIDEBAR */
 .sidebar {
     height: 100%;
     width: 250px;
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: -250px; 
     background-color: #222;
     padding-top: 20px;
-    transition: 0.3s; /* THIS makes it slide */
+    transition: 0.3s;
 }
 
 .sidebar a {
@@ -77,16 +80,10 @@
     cursor: pointer;
 }
 </style>
-<script>
-function toggleSidebar() {
-    const bar = document.getElementById("sidebar");
-    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
-}
-</script>
+</head>
+
 <body>
-<h1>Photography</h1>
-<p>Here are some of my favorite photos I've taken 🌿</p>
-    
+
 <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
@@ -95,7 +92,10 @@ function toggleSidebar() {
 </div>
 
 <button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
-    
+
+<h1>Photography</h1>
+<p>Here are some of my favorite photos I've taken 🌿</p>
+
 <div class="photo-grid">
     <img src="IMG_7270.jpg" alt="White flowers in the sun">
     <img src="IMG_7273.jpg" alt="A bench under a tree in Scripps College, near the Humanities building">
@@ -106,11 +106,13 @@ function toggleSidebar() {
     <img src="IMG_7395.jpg" alt="A photo of the sunset above a Pomona building from the viewpoint of outside Beckett Hall">
     <img src="IMG_7396.jpg" alt="A photo of the moon">
 </div>
+
 <script>
 function toggleSidebar() {
     const bar = document.getElementById("sidebar");
     bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
 }
 </script>
+
 </body>
 </html>

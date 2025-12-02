@@ -62,15 +62,16 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-    height: 100%;
     width: 250px;
+    background-color: #B9D4C0; /* match your palette */
+    color: #2C2C2C;
     position: fixed;
     top: 0;
-    left: -250px; 
-    background-color: #222;
+    left: -250px;
+    height: 100%;
+    transition: left 0.3s;
     padding-top: 20px;
-    transition: 0.3s;
-    z-index: 2000;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
 }
 
 .sidebar a {
@@ -120,7 +121,14 @@ body {
 <script>
 function toggleSidebar() {
     const bar = document.getElementById("sidebar");
-    bar.style.left = bar.style.left === "0px" ? "-250px" : "0px";
+
+    if (bar.style.left === "0px") {
+        bar.style.left = "-250px";
+        document.body.style.marginLeft = "0";
+    } else {
+        bar.style.left = "0px";
+        document.body.style.marginLeft = "250px";
+    }
 }
 </script>
 
